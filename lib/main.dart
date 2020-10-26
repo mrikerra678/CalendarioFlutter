@@ -28,6 +28,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int numHorario = 4;
+  int numHoras = 6;
   @override
   Widget build(BuildContext context) {
     var container = Container(
@@ -78,7 +79,8 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Text("V"),
           ),
         ]),
-        TableRow(
+        for(int y =0;y<numHorario;y++)...{
+           TableRow(
           children: [
             Center(
              child:Text("8:00 - 8:55"),
@@ -92,6 +94,9 @@ class _MyHomePageState extends State<MyHomePage> {
             },
           ],
         ),
+
+        }
+       
       ]),
     );
   }
