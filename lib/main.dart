@@ -27,42 +27,119 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  int numHorario = 4;
   @override
-
- 
   Widget build(BuildContext context) {
     var container = Container(
-        width: 200,
-        height: 200,
+        width: 75,
+        height: 100,
         decoration: BoxDecoration(
-            border: Border.all(width:8, color:Colors.orange),
-            color: Colors.green, borderRadius: BorderRadius.circular(30)),
-        child: Column(           
+            border: Border.all(width: 3, color: Colors.orange),
+            color: Colors.green,
+            borderRadius: BorderRadius.circular(15)),
+        child: Column(
           children: [
             Column(
               children: [
                 Text('Primera Clase'),
                 Icon(Icons.brush),
-               
               ],
             ),
             Column(
               children: [
-               Text("Descripcion de la clase de hoy"),
-             
-            ],)
+                Text("Descripcion"),
+              ],
+            )
           ],
-        )
-        );
+        ));
 
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[container],
-        ),
+      appBar: AppBar(
+        title: Text("Titulo"),
       ),
+      body: Table(children: [
+        TableRow(children: [
+          Center(
+            child: Text(""),
+          ),
+          Center(
+            child: Text("L"),
+          ),
+          Center(
+            child: Text("M"),
+          ),
+          Center(
+            child: Text("MI"),
+          ),
+          Center(
+            child: Text("J"),
+          ),
+          Center(
+            child: Text("V"),
+          ),
+        ]),
+        TableRow(
+          children: [
+            Center(
+             child:Text("8:00 - 8:55"),
+            ),
+            for (int i = 0; i <= numHorario; i++) ...{
+              Column(
+                children: [
+                  container,
+                ],
+              ),
+            },
+          ],
+        ),
+      ]),
     );
   }
-
 }
+/*
+
+TableRow(children: [
+              Text("8:00 - 8:55"),
+              container,
+              container,
+              container,
+              container,
+              container,
+            ]),
+            TableRow(children: [
+              Text("8:00 - 8:55"),
+              container,
+              container,
+              container,
+              container,
+              container,
+            ]),
+            TableRow(children: [
+              Text("8:00 - 8:55"),
+              container,
+              container,
+              container,
+              container,
+              container,
+              
+            ]),
+ 
+  
+    
+      Row(
+        children: [
+              Center(
+                child: Text("8:00 - 8:55"),
+              ),
+              Center(
+                child: Text("8:00 - 8:55"),
+              ),
+              Center(
+                child: Text("8:00 - 8:55"),
+              ),
+              Center(
+                child: Text("8:00 - 8:55"),
+              ),
+               ],
+      ),
+  */
