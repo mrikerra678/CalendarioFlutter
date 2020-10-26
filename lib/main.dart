@@ -29,6 +29,8 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int numHorario = 4;
   int numHoras = 6;
+  List<String> listaHorario= ["8:00 -8:50","8-50:-9.50","","","",""];
+  List<String> listaDiaSemanas= ["L","M","Mi","J","V"];
   @override
   Widget build(BuildContext context) {
     var container = Container(
@@ -60,30 +62,20 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Table(children: [
         TableRow(children: [
-          Center(
-            child: Text(""),
-          ),
-          Center(
-            child: Text("L"),
-          ),
-          Center(
-            child: Text("M"),
-          ),
-          Center(
-            child: Text("MI"),
-          ),
-          Center(
-            child: Text("J"),
-          ),
-          Center(
-            child: Text("V"),
-          ),
+          Text(""),
+           for (int i = 0; i <= numHorario; i++) ...{
+             Center(
+              child:Text(listaDiaSemanas[i],textAlign: TextAlign.justify),
+              ),
+
+           },
+         
         ]),
         for(int y =0;y<numHoras;y++)...{
            TableRow(
           children: [
             Center(
-             child:Text("8:00 - 8:55",textAlign: TextAlign.justify),
+             child:Text(listaHorario[y],textAlign: TextAlign.justify),
             ),
             for (int i = 0; i <= numHorario; i++) ...{
               Column(
