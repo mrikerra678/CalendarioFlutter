@@ -79,11 +79,11 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Text("V"),
           ),
         ]),
-        for(int y =0;y<numHorario;y++)...{
+        for(int y =0;y<numHoras;y++)...{
            TableRow(
           children: [
             Center(
-             child:Text("8:00 - 8:55"),
+             child:Text("8:00 - 8:55",textAlign: TextAlign.justify),
             ),
             for (int i = 0; i <= numHorario; i++) ...{
               Column(
