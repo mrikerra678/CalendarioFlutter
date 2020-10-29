@@ -1,3 +1,56 @@
 {
-    "Clase":"1"
+    "DiasSemana": {
+        "Lunes": "L",
+        "Martes": "M",
+        "Miercoles": "X",
+        "Jueves": "J",
+        "Viernes": "V"
+    },
+    "Horario": {
+        "Hora1": "8:00 - 8:50",
+        "Hora2": "8:55 - 9:50",
+        "Hora3": "9:50 - 10:45",
+        "Hora4": "10:45 - 11:40",
+        "Hora5": "12:10 - 13:00",
+        "Hora6": "13:00 - 13:55",
+        "Hora7": "13:55 - 14:50"
+    },
+    "Clases": {
+        "Clase1": {
+            "Nombre": "Acceso a Datos",
+            "Abreviatura": "ACC Datos",
+            "Profesor": "Miren A.",
+            "Aula": 104
+        },
+        "Clase2": {
+            "Nombre": "Programacion Multiplataforma",
+            "Abreviatura": "PROG MULTIM",
+            "Profesor": "Santi H.",
+            "Aula": 104
+        },
+        "Clase3": {
+            "Nombre": "Desarrollo de interfaces",
+            "Abreviatura": "DESAR NTERF",
+            "Profesor": "Martin M.",
+            "Aula": 104
+        },
+        "Clase4": {
+            "Nombre": "Programacion de Servicios",
+            "Abreviatura": "PROG SERV",
+            "Profesor": "Beñat Z.",
+            "Aula": 104
+        },
+        "Clase5": {
+            "Nombre": "Empresa e Iniciativa Emprendedora",
+            "Abreviatura": "EIE",
+            "Profesor": "Karmele L.",
+            "Aula": 107
+        },
+        "Clase6": {
+            "Nombre": "Sistema de Gestion Empresarial",
+            "Abreviatura": "SIS GEST EMP",
+            "Profesor": "Aritz L.",
+            "Aula": 104
+        }
+    }
 }
