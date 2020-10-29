@@ -1,4 +1,7 @@
+import 'dart:convert';
+import 'package:calendarProyect/Clases.dart';
 import 'package:flutter/material.dart';
+import 'package:calendarProyect/widgets/list.dart';
 
 void main() {
   runApp(MyApp());
@@ -112,6 +115,15 @@ class SecondRoute extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
+            new FutureBuilder(
+                future: DefaultAssetBundle.of(context)
+                    .loadString('assets/Clases.json'),
+                builder: (context, snapshot) {
+                  List<Clases> countries = parseJosn(snapshot.data.toString());
+                  return !countries.isEmpty
+                      ? new CountyList(countries: countries)
+                      : new Center(child: new CircularProgressIndicator());
+                }),
             Text("Clase:"),
             TextFormField(),
             Text("Profesor:"),
@@ -139,50 +151,11 @@ class SecondRoute extends StatelessWidget {
         body: container);
   }
 }
-/*
 
-TableRow(children: [
-              Text("8:00 - 8:55"),
-              container,
-              container,
-              container,
-              container,
-              container,
-            ]),
-            TableRow(children: [
-              Text("8:00 - 8:55"),
-              container,
-              container,
-              container,
-              container,
-              container,
-            ]),
-            TableRow(children: [
-              Text("8:00 - 8:55"),
-              container,
-              container,
-              container,
-              container,
-              container,
-              
-            ]),
- 
-  
-    
-      Row(
-        children: [
-              Center(
-                child: Text("8:00 - 8:55"),
-              ),
-              Center(
-                child: Text("8:00 - 8:55"),
-              ),
-              Center(
-                child: Text("8:00 - 8:55"),
-              ),
-              Center(
-                child: Text("8:00 - 8:55"),
-              ),
-               ],
-      ),
-  */
+List<Clases> parseJosn(String response) {
+  if (response == null) {
+    return [];
+  }
+  final parsed = json.decode(response.toString()).cast<Map<String, dynamic>>();
+  return parsed.map<Clases>((json) => new Clases().fromJson(json)).toList();
+}

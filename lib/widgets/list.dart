@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import '../Clases.dart';
+import 'package:calendarProyect/widgets/Clases.dart';
 
 class CountyList extends StatelessWidget {
   final List<Clases> country;
@@ -20,14 +20,14 @@ class CountyList extends StatelessWidget {
                 children: <Widget>[
                   new Text(
                     // Read the name field value and set it in the Text widget
-                    country[index].name,
+                    country[index].nombre,
                     // set some style to text
                     style: new TextStyle(
                         fontSize: 20.0, color: Colors.lightBlueAccent),
                   ),
                   new Text(
                     // Read the name field value and set it in the Text widget
-                    "Capital:- " + country[index].capital,
+                    "Capital:- " + country[index].aula.toString(),
                     // set some style to text
                     style: new TextStyle(fontSize: 20.0, color: Colors.amber),
                   ),

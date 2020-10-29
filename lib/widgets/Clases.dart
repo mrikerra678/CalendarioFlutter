@@ -1,15 +1,18 @@
 class Clases {
-  final String name;
-  final String flag;
-  final String capital;
+  //final String diasSemana;
+  final String nombre;
+  final String abreviatura;
+  final String profesor;
+  final int aula;
 
-  Clases({this.name, this.flag, this.capital});
+  Clases({this.nombre, this.abreviatura, this.profesor, this.aula});
 
   factory Clases.fromJson(Map<String, dynamic> json) {
     return new Clases(
-      name: json['name'] as String,
-      flag: json['flag'] as String,
-      capital: json['capital'] as String,
+      nombre: json['clases'] as String,
+      abreviatura: json['abreviatura'] as String,
+      profesor: json['profesor'] as String,
+      aula: json['aula'] as int,
     );
   }
 }
