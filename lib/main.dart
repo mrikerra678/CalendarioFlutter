@@ -114,9 +114,9 @@ class SecondRoute extends StatelessWidget {
           children: <Widget>[
             Text("Clase:"),
             TextFormField(),
-            Text("Clase:"),
+            Text("Profesor:"),
             TextFormField(),
-            Text("Clase:"),
+            Text("Aula:"),
             TextFormField(),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 16.0),
