@@ -1,7 +1,4 @@
-import 'dart:convert';
-import 'package:calendarProyect/Clases.dart';
 import 'package:flutter/material.dart';
-import 'package:calendarProyect/widgets/list.dart';
 
 void main() {
   runApp(MyApp());
@@ -104,26 +101,14 @@ class _MyHomePageState extends State<MyHomePage> {
 class SecondRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final _formKey = GlobalKey<FormState>();
+    // final _formKey = GlobalKey<FormState>();
+    var _formKey;
     var container = Container(
-      decoration: BoxDecoration(
-          border: Border.all(width: 3, color: Colors.orange),
-          color: Colors.green,
-          borderRadius: BorderRadius.circular(15)),
       child: Form(
         key: _formKey,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            new FutureBuilder(
-                future: DefaultAssetBundle.of(context)
-                    .loadString('assets/Clases.json'),
-                builder: (context, snapshot) {
-                  List<Clases> countries = parseJosn(snapshot.data.toString());
-                  return !countries.isEmpty
-                      ? new CountyList(countries: countries)
-                      : new Center(child: new CircularProgressIndicator());
-                }),
             Text("Clase:"),
             TextFormField(),
             Text("Profesor:"),
@@ -142,6 +127,10 @@ class SecondRoute extends StatelessWidget {
           ],
         ),
       ),
+      decoration: BoxDecoration(
+          border: Border.all(width: 3, color: Colors.orange),
+          color: Colors.green,
+          borderRadius: BorderRadius.circular(15)),
     );
 
     return Scaffold(
@@ -152,10 +141,22 @@ class SecondRoute extends StatelessWidget {
   }
 }
 
-List<Clases> parseJosn(String response) {
-  if (response == null) {
-    return [];
-  }
-  final parsed = json.decode(response.toString()).cast<Map<String, dynamic>>();
-  return parsed.map<Clases>((json) => new Clases().fromJson(json)).toList();
-}
+/*
+
+ 
+
+
+
+
+
+
+---
+
+
+
+
+          
+
+
+
+ */
