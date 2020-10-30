@@ -1,3 +1,4 @@
+import 'package:calendarProyect/widgets/contenedor.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -33,37 +34,6 @@ class _MyHomePageState extends State<MyHomePage> {
   List<String> listaDiaSemanas = ["L", "M", "Mi", "J", "V"];
   @override
   Widget build(BuildContext context) {
-    var container = Container(
-        width: 100,
-        height: 100,
-        decoration: BoxDecoration(
-            border: Border.all(width: 3, color: Colors.orange),
-            color: Colors.green,
-            borderRadius: BorderRadius.circular(15)),
-        child: Column(
-          children: [
-            Column(
-              children: [
-                Text('Primera Clase'),
-                RaisedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => SecondRoute()),
-                    );
-                  },
-                  child: Icon(Icons.add),
-                ),
-              ],
-            ),
-            Column(
-              children: [
-                Text("Descripcion"),
-              ],
-            )
-          ],
-        ));
-
     return Scaffold(
       appBar: AppBar(
         title: Text("Titulo"),
@@ -85,9 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               for (int i = 0; i <= numHorario; i++) ...[
                 Column(
-                  children: [
-                    container,
-                  ],
+                  children: [Cosas()],
                 ),
               ],
             ],
@@ -95,49 +63,6 @@ class _MyHomePageState extends State<MyHomePage> {
         ]
       ]),
     );
-  }
-}
-
-class SecondRoute extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    // final _formKey = GlobalKey<FormState>();
-    var _formKey;
-    var container = Container(
-      child: Form(
-        key: _formKey,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Text("Clase:"),
-            TextFormField(),
-            Text("Profesor:"),
-            TextFormField(),
-            Text("Aula:"),
-            TextFormField(),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 16.0),
-              child: BackButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-                //child: Text('Guardar'),
-              ),
-            ),
-          ],
-        ),
-      ),
-      decoration: BoxDecoration(
-          border: Border.all(width: 3, color: Colors.orange),
-          color: Colors.green,
-          borderRadius: BorderRadius.circular(15)),
-    );
-
-    return Scaffold(
-        appBar: AppBar(
-          title: Text("Titulo"),
-        ),
-        body: container);
   }
 }
 
