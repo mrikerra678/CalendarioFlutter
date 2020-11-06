@@ -1,6 +1,7 @@
 import 'package:calendarProyect/widgets/contenedor.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class Formulario extends StatefulWidget {
   Formulario({Key key, Contenedor contenedor}) : super(key: key);
 
@@ -13,9 +14,8 @@ class Formulario extends StatefulWidget {
 class SecondRoute extends State<Formulario> {
   @override
   Widget build(BuildContext context) {
-    // final _formKey = GlobalKey<FormState>();
-
     final _formKey = GlobalKey<FormState>();
+
     var container = Container(
       child: Form(
         key: _formKey,
@@ -23,20 +23,27 @@ class SecondRoute extends State<Formulario> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Text("Clase:"),
-            TextFormField(
-              onChanged: (value) => cambiarEstado(value),
-            ),
+            TextFormField(onChanged: (value) {
+              setState(() {
+                widget.contenedor.clase = value;
+              });
+            }),
             Text("Profesor:"),
             TextFormField(),
             Text("Aula:"),
-            TextFormField(),
+            TextFormField(
+              onChanged: (value) {
+                setState(() {
+                  widget.contenedor.clase = value;
+                });
+              },
+            ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 16.0),
               child: BackButton(
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
-                //child: Text('Guardar'),
               ),
             ),
           ],
@@ -53,11 +60,5 @@ class SecondRoute extends State<Formulario> {
           title: Text("Titulo"),
         ),
         body: container);
-  }
-
-  cambiarEstado(String value) {
-    setState(() {
-      widget.contenedor.clase = value;
-    });
   }
 }
