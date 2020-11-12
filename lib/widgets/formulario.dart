@@ -28,7 +28,7 @@ class SecondRoute extends State<Formulario> {
                 widget.contenedor.clase = value;
               });
             }),
-            Text("Profesor:"),
+            Text('$widget'),
             TextFormField(),
             Text("Aula:"),
             TextFormField(
