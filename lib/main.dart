@@ -55,6 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text("Titulo"),
       ),
       body: Table(
+        defaultVerticalAlignment: TableCellVerticalAlignment.middle,
         children: [
           TableRow(children: [
             Text(""),
