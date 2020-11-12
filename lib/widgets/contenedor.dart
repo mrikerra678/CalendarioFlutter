@@ -41,13 +41,13 @@ class Cosos extends State<Cosas> {
     ];
     var aulas = ["", "104", "104", "104", "104", "107", "104"];
     var colores = [
-      Colors.amber[100],
-      Colors.amber,
-      Colors.blue,
-      Colors.green,
-      Colors.red,
-      Colors.lime,
-      Colors.pink[200]
+      Colors.cyan[100],
+      Colors.indigoAccent,
+      Colors.deepPurpleAccent,
+      Colors.deepOrange,
+      Colors.greenAccent,
+      Colors.lightGreenAccent,
+      Colors.pinkAccent[200]
     ];
 
     if (widget.numero == 0) {
@@ -75,12 +75,11 @@ class Cosos extends State<Cosas> {
 
     var container = InkWell(
       child: Container(
-          //width: 50,
-          height: 70,
+          height: 80.6,
           decoration: BoxDecoration(
-              border: Border.all(width: 0.9, color: Colors.black),
+              border: Border.all(width: 1, color: Colors.black),
               color: contenedor.color,
-              borderRadius: BorderRadius.circular(8)),
+              borderRadius: BorderRadius.circular(5)),
           child: Column(
             children: [
               Column(
